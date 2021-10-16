@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@import "variables";
+@import "breakpoints";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  min-height: 100vh;
+  scroll-snap-type: none;
+}
+.App {
+  position: relative;
+  background: $light-green;
+  transition: background 0.5s ease-in-out;
+  font-family: Roboto, sans-serif;
+  min-height: 100vh;
+}
+header {
+  background: transparent;
+  position: absolute;
+  padding-top: 20px;
+  top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 2;
+  width: 100%;
+
+  @include breakpoint-up("medium") {
+    position: fixed;
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+  img {
+    width: 160px;
+    height: auto;
+
+    @include breakpoint-up("small") {
+      width: 260px;
+    }
+  }
+  p {
+    display: none;
+    @include breakpoint-up("medium") {
+      display: block;
+    }
+  }
+}
+.container {
+  @include breakpoint-up("medium") {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .book {
+    width: 100%;
+    padding-top: 6.2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    scroll-snap-align: center;
+    transition: all 700ms ease;
+
+    &.normal {
+      transition: none;
+      transform: translateY(0) !important;
+    }
+
+    @include breakpoint-up("small") {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .img-container {
+      text-align: center;
+      img {
+        width: 80%;
+        max-width: 420px;
+
+        @include breakpoint-up("small") {
+          width: 100%;
+        }
+        @include breakpoint-up("large") {
+          height: 532px;
+        }
+      }
+    }
+    h4,
+    p {
+      margin-bottom: 1.5rem;
+    }
+    a {
+      cursor: pointer;
+    }
+    p {
+      font-weight: 700;
+      a {
+        color: $white;
+      }
+    }
+  }
+  .info {
+    margin: 0 1.5rem;
+    text-align: center;
+    p {
+      font-weight: 700;
+      padding-bottom: 2rem;
+      line-height: 1.7;
+    }
+    span {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.description {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  width: 315px;
+  color: #251d20;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 28px;
+  display: none;
+
+  @include breakpoint-up("medium") {
+    display: block;
+  }
+
+  .politycs {
+    margin-top: 1rem;
+    a {
+      color: black;
+    }
+  }
+}
+.links {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  font-size: 18px;
+  line-height: 1.6;
+
+  @include breakpoint-up("medium") {
+    display: block;
+  }
+  p {
+    cursor: pointer;
+  }
+  p.active {
+    font-weight: bold;
+  }
+}

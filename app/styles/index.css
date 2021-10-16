@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  -ms-scroll-snap-type: none;
+      scroll-snap-type: none;
+}
+
+.App {
+  position: relative;
+  background: #00c1b5;
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+  font-family: Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  background: transparent;
+  position: absolute;
+  padding-top: 20px;
+  top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 2;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  header {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+header img {
+  width: 160px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  header img {
+    width: 260px;
+  }
+}
+
+header p {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  header p {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+}
+
+.container .book {
+  width: 100%;
+  padding-top: 6.2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  scroll-snap-align: center;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.container .book.normal {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+}
+
+@media (min-width: 768px) {
+  .container .book {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 100vh;
+  }
+}
+
+.container .book .img-container {
+  text-align: center;
+}
+
+.container .book .img-container img {
+  width: 80%;
+  max-width: 420px;
+}
+
+@media (min-width: 768px) {
+  .container .book .img-container img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container .book .img-container img {
+    height: 532px;
+  }
+}
+
+.container .book h4,
+.container .book p {
+  margin-bottom: 1.5rem;
+}
+
+.container .book a {
+  cursor: pointer;
+}
+
+.container .book p {
+  font-weight: 700;
+}
+
+.container .book p a {
+  color: #ffffff;
+}
+
+.container .info {
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
+.container .info p {
+  font-weight: 700;
+  padding-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.container .info span {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.description {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  width: 315px;
+  color: #251d20;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 28px;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .description {
+    display: block;
+  }
+}
+
+.description .politycs {
+  margin-top: 1rem;
+}
+
+.description .politycs a {
+  color: black;
+}
+
+.links {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media (min-width: 1024px) {
+  .links {
+    display: block;
+  }
+}
+
+.links p {
+  cursor: pointer;
+}
+
+.links p.active {
+  font-weight: bold;
+}
+/*# sourceMappingURL=index.css.map */
